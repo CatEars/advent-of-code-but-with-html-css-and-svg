@@ -16,11 +16,17 @@ with open('helper-vars.css', 'w') as f:
     print('', file=f)
     for x in sorted(necessary_vars):
         print('div[data-integer-value="{0}"] + div {{ --prior-div-integer-value: {0}; --prior-div-string-value: "{0}" }}'.format(x), file=f)
+    print('', file=f)
+    for x in sorted(necessary_vars):
+        print('div[data-integer-value="{0}"] + div + div {{ --prior-prior-div-integer-value: {0}; --prior-div-string-value: "{0}" }}'.format(x), file=f)
+    print('', file=f)
+    for x in sorted(necessary_vars):
+        print('div[data-integer-value="{0}"] + div + div + div {{ --prior-prior-prior-div-integer-value: {0}; --prior-div-string-value: "{0}" }}'.format(x), file=f)
 
 divs = '\n'
 
 for input_id in ids:
-    divs += '<div data-integer-value="{0}"></div>\n'.format(input_id)
+    divs += '<div data-integer-value="{0}"><div class="lhs"></div><div class="rhs"></div></div>\n'.format(input_id)
 
 with open('index-template.html', 'r') as f:
     content = f.read()

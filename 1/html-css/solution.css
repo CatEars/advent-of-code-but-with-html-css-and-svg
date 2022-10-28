@@ -1,19 +1,73 @@
 div[data-integer-value] {
-  --color-strength: 150;
   --resulting-value: calc(
     var(--my-integer-value) - var(--prior-div-integer-value)
   );
   --clamped-resulting-value: min(1, max(0, var(--resulting-value)));
   --inverted-clamped-result: calc(1 - var(--clamped-resulting-value));
 
-  counter-increment: count var(--clamped-resulting-value);
-  background-color: rgb(
-    calc(var(--inverted-clamped-result) * var(--color-strength)),
-    calc(var(--clamped-resulting-value) * var(--color-strength)),
-    0
+  --left-red: calc(var(--inverted-clamped-result) * var(--color-strength));
+  --left-green: calc(var(--clamped-resulting-value) * var(--color-strength));
+
+  --prior-sliding-window: calc(
+    var(--prior-prior-prior-div-integer-value) +
+      var(--prior-prior-div-integer-value) + var(--prior-div-integer-value)
   );
+  --current-sliding-window: calc(
+    var(--prior-prior-div-integer-value, 0) + var(--prior-div-integer-value, 0) +
+      var(--my-integer-value, 0)
+  );
+
+  --second-resulting-value: calc(
+    var(--current-sliding-window) - var(--prior-sliding-window)
+  );
+  --second-clamped-resulting-value: min(
+    1,
+    max(0, var(--second-resulting-value))
+  );
+  --second-inverted-clamped-result: calc(
+    1 - var(--second-clamped-resulting-value)
+  );
+
+  --right-red: calc(
+    var(--second-inverted-clamped-result) * var(--color-strength)
+  );
+  --right-green: calc(
+    var(--second-clamped-resulting-value) * var(--color-strength)
+  );
+
+  /*  
+  Apparently counters are harder than I imagined. You can OBVIOUSLY (duh)
+  not run two named counters in parallell...
+  Fine... Let's use base 
+
+  counter-increment: first var(--clamped-resulting-value);
+  counter-increment: second var(--second-clamped-resulting-value);
+  */
+  counter-increment: sad-counter
+    calc(
+      100000 * var(--clamped-resulting-value) +
+        var(--second-clamped-resulting-value, 0)
+    );
+}
+
+div[data-integer-value] > .lhs {
+  --red: var(--left-red);
+  --green: var(--left-green);
+}
+
+div[data-integer-value] > .lhs + .rhs {
+  --red: var(--right-red);
+  --green: var(--right-green);
+}
+
+div[data-integer-value] > .lhs::after {
+  content: var(--my-string-value);
+}
+
+div[data-integer-value] > .lhs + .rhs::after {
+  content: var(--my-string-value);
 }
 
 #answer::after {
-  content: " " counter(count);
+  content: " " counter(sad-counter);
 }
