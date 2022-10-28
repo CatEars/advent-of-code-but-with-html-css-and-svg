@@ -1,0 +1,19 @@
+div[data-integer-value] {
+  --color-strength: 150;
+  --resulting-value: calc(
+    var(--my-integer-value) - var(--prior-div-integer-value)
+  );
+  --clamped-resulting-value: min(1, max(0, var(--resulting-value)));
+  --inverted-clamped-result: calc(1 - var(--clamped-resulting-value));
+
+  counter-increment: count var(--clamped-resulting-value);
+  background-color: rgb(
+    calc(var(--inverted-clamped-result) * var(--color-strength)),
+    calc(var(--clamped-resulting-value) * var(--color-strength)),
+    0
+  );
+}
+
+#answer::after {
+  content: " " counter(count);
+}

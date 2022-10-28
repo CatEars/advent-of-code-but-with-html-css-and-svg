@@ -1,0 +1,19 @@
+div[data-integer-value="199"] { --my-integer-value: 199; --my-string-value: "199" }
+div[data-integer-value="200"] { --my-integer-value: 200; --my-string-value: "200" }
+div[data-integer-value="207"] { --my-integer-value: 207; --my-string-value: "207" }
+div[data-integer-value="208"] { --my-integer-value: 208; --my-string-value: "208" }
+div[data-integer-value="210"] { --my-integer-value: 210; --my-string-value: "210" }
+div[data-integer-value="240"] { --my-integer-value: 240; --my-string-value: "240" }
+div[data-integer-value="260"] { --my-integer-value: 260; --my-string-value: "260" }
+div[data-integer-value="263"] { --my-integer-value: 263; --my-string-value: "263" }
+div[data-integer-value="269"] { --my-integer-value: 269; --my-string-value: "269" }
+
+div[data-integer-value="199"] + div { --prior-div-integer-value: 199; --prior-div-string-value: "199" }
+div[data-integer-value="200"] + div { --prior-div-integer-value: 200; --prior-div-string-value: "200" }
+div[data-integer-value="207"] + div { --prior-div-integer-value: 207; --prior-div-string-value: "207" }
+div[data-integer-value="208"] + div { --prior-div-integer-value: 208; --prior-div-string-value: "208" }
+div[data-integer-value="210"] + div { --prior-div-integer-value: 210; --prior-div-string-value: "210" }
+div[data-integer-value="240"] + div { --prior-div-integer-value: 240; --prior-div-string-value: "240" }
+div[data-integer-value="260"] + div { --prior-div-integer-value: 260; --prior-div-string-value: "260" }
+div[data-integer-value="263"] + div { --prior-div-integer-value: 263; --prior-div-string-value: "263" }
+div[data-integer-value="269"] + div { --prior-div-integer-value: 269; --prior-div-string-value: "269" }

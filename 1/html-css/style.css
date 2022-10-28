@@ -1,7 +1,0 @@
-li {
-    background-color: lightcoral;   
-}
-
-li:nth-child(n) {
-    width: calc(var(--integer-value) * 3px)
-}

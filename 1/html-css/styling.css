@@ -1,0 +1,22 @@
+section {
+  font-family: system-ui;
+  font-size: 20px;
+}
+
+div {
+  min-height: 10px;
+  margin: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: solid darkgray;
+  display: flex;
+  justify-content: center;
+}
+
+div[data-integer-value]::after {
+  content: var(--my-string-value);
+}
+
+div[data-integer-value]:first-of-type {
+  background-color: navy;
+}
