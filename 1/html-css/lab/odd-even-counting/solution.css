@@ -1,0 +1,15 @@
+[data-integer-value]:nth-of-type(odd) {
+  --carried: var(--even-result, 0);
+  --result: calc(var(--carried) + var(--my-integer-value));
+  --odd-result: var(--result);
+}
+
+[data-integer-value]:nth-of-type(even) {
+  --carried: var(--odd-result, 0);
+  --result: calc(var(--carried) + var(--my-integer-value));
+  --even-result: var(--result);
+}
+
+[data-integer-value] {
+  height: var(--result);
+}
