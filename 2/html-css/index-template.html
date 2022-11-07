@@ -14,7 +14,36 @@
     <link rel="stylesheet" href="solution.css" />
   </head>
   <body>
-    <h1>Advent of Code 2021 HTML + CSS Solution #2</h1>
-    <section>[[DATA]]</section>
+    <h1>Advent of Code 2021 HTML + CSS Solution #2 - Part 1</h1>
+    <p>Instructions</p>
+    <ol>
+      <li>Zoom out until the full width of the squares are shown</li>
+      <li>Open Dev Tools / Inspector</li>
+      <li>
+        Calculate the volume of the layout of each square using the box model
+      </li>
+      <ul>
+        <li>
+          Firefox: The box model is found by selecting the element and going to
+          the sub-tab "Layout"
+        </li>
+        <li>
+          Chrome: Doesn't seem to show the correct size. Located under
+          "Computed" tab in the inspector.
+        </li>
+        <li>
+          Edge: Same instructions as Chrome. But it shows the correct size.
+          ¯\_(ツ)_/¯
+        </li>
+      </ul>
+      <li>
+        Subtract the volume of the green-line square (smaller at bottom) from
+        the volume of the red-lined square (bigger at top)
+      </li>
+    </ol>
+    <div class="data-holders">
+      <section id="dive-data-holder">[[DIVE-DATA]]</section>
+      <section id="surface-data-holder">[[SURFACE-DATA]]</section>
+    </div>
   </body>
 </html>

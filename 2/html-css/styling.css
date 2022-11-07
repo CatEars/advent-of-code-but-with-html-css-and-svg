@@ -1,19 +1,62 @@
-section {
-  font-family: system-ui;
-  font-size: 20px;
-}
-div[data-command="forward"]::before {
-  content: "Forward";
+:root {
+  --base-height: 2px;
+  --base-width: 2px;
 }
 
-div[data-command="down"]::before {
-  content: "Down";
+#dive-data-holder {
+  display: inline-block;
+  background-color: gray;
 }
 
-div[data-command="up"]::before {
-  content: "Up";
+#surface-data-holder {
+  display: inline-block;
+  background-color: gray;
+  margin-top: 10px;
 }
 
-div[data-distance]::after {
-  content: " " var(--distance-as-string);
+div.command-up {
+  display: inline;
+  position: relative;
+  top: 0px;
+  left: 0px;
+}
+
+div[data-command="up"] {
+  width: var(--base-width);
+  height: calc(var(--distance) * 1);
+  background-color: green;
+}
+
+html > body {
+  max-width: none;
+}
+
+div.command-down {
+  z-index: 2;
+  display: inline;
+  position: relative;
+  top: 0px;
+  left: 0px;
+}
+
+div[data-command="down"] {
+  width: var(--base-width);
+  height: calc(var(--distance) * 1);
+  background-color: red;
+}
+
+div.command-forward {
+  z-index: 1;
+  height: var(--base-height);
+  display: inline;
+  position: relative;
+  top: 0px;
+  left: 0px;
+}
+
+div[data-command="forward"] {
+  float: left;
+  background-color: hotpink;
+  width: calc(var(--distance) * 1);
+  height: var(--base-height);
 }
