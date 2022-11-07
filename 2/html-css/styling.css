@@ -1,0 +1,19 @@
+section {
+  font-family: system-ui;
+  font-size: 20px;
+}
+div[data-command="forward"]::before {
+  content: "Forward";
+}
+
+div[data-command="down"]::before {
+  content: "Down";
+}
+
+div[data-command="up"]::before {
+  content: "Up";
+}
+
+div[data-distance]::after {
+  content: " " var(--distance-as-string);
+}
