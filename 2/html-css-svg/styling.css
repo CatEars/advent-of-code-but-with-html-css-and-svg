@@ -1,0 +1,7 @@
+svg > rect {
+  fill: hotpink;
+}
+
+.svg-holder {
+  width: 2000px;
+}
