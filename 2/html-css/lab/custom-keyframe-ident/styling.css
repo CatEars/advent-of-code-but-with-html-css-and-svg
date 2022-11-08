@@ -1,0 +1,130 @@
+svg > rect {
+  fill: hotpink;
+}
+
+.svg-holder {
+  width: 2000px;
+}
+
+/* This just contains a dumb CSS animation for something fun to do while waiting for the animation to finish */
+
+.hidden-then-shown {
+  visibility: hidden;
+  animation-name: hidden-then-shown;
+  animation-duration: 1s;
+  animation-delay: 12s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.opaqueing {
+  animation-name: opaqueing;
+  animation-duration: 10s;
+  animation-delay: 12s;
+  animation-iteration-count: 1;
+}
+
+.car-holder {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  animation-name: car-animation;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.car {
+  width: 40px;
+  height: 40px;
+  z-index: 10;
+  animation-name: rotation;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+  animation-duration: 2s;
+}
+
+@keyframes car-animation {
+  0% {
+    top: 0px;
+    left: 0px;
+  }
+
+  10.1% {
+    top: 10vh;
+    left: 3vw;
+  }
+
+  20.6% {
+    top: 7vh;
+    left: 20vw;
+  }
+
+  30.8% {
+    top: 7vh;
+    left: 80vw;
+  }
+
+  40.9% {
+    top: 50vh;
+    left: 80vw;
+  }
+
+  50.5% {
+    top: 45vh;
+    left: 10vw;
+  }
+
+  60.5% {
+    top: 70vh;
+    left: 15vw;
+  }
+
+  70.6% {
+    top: 75vh;
+    left: 35vw;
+  }
+
+  80.2% {
+    top: 95vh;
+    left: 25vw;
+  }
+
+  90% {
+    top: 90vh;
+    left: 75vw;
+  }
+
+  100% {
+    top: 100vh;
+    left: 100vw;
+  }
+}
+
+@keyframes rotation {
+  from {
+    rotate: 0deg;
+  }
+  to {
+    rotate: 360deg;
+  }
+}
+
+@keyframes hidden-then-shown {
+  from {
+    visibility: hidden;
+  }
+  to {
+    visibility: inherit;
+  }
+}
+
+@keyframes opaqueing {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}

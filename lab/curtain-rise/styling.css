@@ -1,0 +1,86 @@
+:root {
+  --bg: white;
+}
+
+.curtain {
+  height: 100vh;
+  z-index: 2;
+  background-color: var(--bg);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  border-bottom: 2px solid black;
+}
+
+.text-holder {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+p {
+  text-align: center;
+  margin: 0;
+}
+
+.ultra-bold {
+  font-size: 128px;
+}
+
+.text-centerer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+section {
+  height: 200vh;
+}
+
+.smiley-holder {
+  z-index: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+.smiley-holder > svg {
+  margin-top: 20vh;
+}
+
+.holder {
+  position: relative;
+  width: 200px;
+  height: 50px;
+}
+.clip {
+  /* Clip edges, as some of the lines don't terminate nicely. */
+  overflow: hidden;
+}
+
+.ellipse {
+  position: absolute;
+  background: radial-gradient(
+    ellipse,
+    transparent,
+    transparent 7px,
+    black 7px,
+    black 10px,
+    transparent 11px
+  );
+  background-size: 36px 40px;
+  width: 200px;
+  height: 20px;
+}
+
+.ellipse2 {
+  top: 20px;
+  left: 18px;
+  background-position: 0px -20px;
+}

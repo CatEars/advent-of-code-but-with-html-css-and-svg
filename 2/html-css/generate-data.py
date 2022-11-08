@@ -2,7 +2,7 @@ import sys
 import os
 sys.setrecursionlimit(2500)
 
-filename = 'test-input'
+filename = 'input'
 
 with open(filename, 'r') as f:
     content = [x.strip() for x in f.readlines()]
