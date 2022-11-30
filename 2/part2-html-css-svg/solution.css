@@ -1,0 +1,7 @@
+div[data-integer-value] {
+  counter-increment: forward-counter var(--my-integer-value);
+}
+
+.forwards-distance > #answer::after {
+  content: " " counter(forward-counter);
+}

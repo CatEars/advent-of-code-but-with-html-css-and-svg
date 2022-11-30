@@ -1,0 +1,3 @@
+div[data-integer-value="2"] { --my-integer-value: 2; --my-string-value: "2" }
+div[data-integer-value="5"] { --my-integer-value: 5; --my-string-value: "5" }
+div[data-integer-value="8"] { --my-integer-value: 8; --my-string-value: "8" }
